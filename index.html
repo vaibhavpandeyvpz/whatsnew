@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="w-100 h-100" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>What&apos;s new? Send WhatsApp to any number without saving!</title>
+    <meta name="description" content="Send WhatsApp message to any number you have without saving it into your contacts or phone-book. No need to download or install anything on your phone. Just add this page to your home screen.">
+    <meta name="description" content="send whatsapp, whatsapp unknown number, whatsapp unknown contact">
+    <link rel="stylesheet" href="/styles.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body class="w-100 h-100 d-flex">
+<div class="w-100 my-auto">
+    <div class="m-3">
+        <div class="row justify-content-center">
+            <div class="col-sm-10 col-md-8 col-lg-4">
+                <div class="card shadow mb-3">
+                    <div class="card-body">
+                        <h1 class="h5 card-title text-primary">What&apos;s new?</h1>
+                        <p class="card-text">
+                            Use this tiny web-app to send WhatsApp message to any number you have without saving it.
+                        </p>
+                        <p class="card-text">
+                            For quick access, add this to <strong>your home screen</strong>.
+                        </p>
+                    </div>
+                    <div class="card-body border-top">
+                        <form id="form-start" method="post">
+                            <div class="form-group">
+                                <label for="fields-phone">Number <span class="text-danger">&ast;</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">+</span>
+                                    </div>
+                                    <!--suppress HtmlFormInputWithoutLabel -->
+                                    <input class="form-control" id="fields-cc" required style="max-width: 64px" type="number">
+                                    <input autofocus class="form-control" id="fields-phone" required type="number">
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary">
+                                Start chat <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <p class="text-muted mb-0">
+                    <small style="line-height: 1em">
+                        <strong>Disclaimer:</strong> Names and logos used are property of their respective owners.
+                        Open-source project by <a href="https://vaibhavpandey.com/" target="_blank">VPZ</a>, code hosted at <a href="https://github.com/vaibhavpandeyvpz/whatsnew" target="_blank">Github</a>.
+                        Built with <i class="fas fa-heart text-danger"></i> in India.
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+            .catch(function (err) {
+                console.error(err)
+            })
+    }
+    $('#form-start').on('submit', function (e) {
+        e.preventDefault();
+        var cc = $('#fields-cc').val().trim();
+        var phone = $('#fields-phone').val().trim();
+        window.open('https://wa.me/' + cc + phone, '_blank')
+    });
+    $.get('https://ipapi.co/json/')
+        .then(function (json) {
+            var cc = json.country_calling_code.substring(1);
+            $('#fields-cc').val(cc)
+        })
+</script>
+</body>
+</html>

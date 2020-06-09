@@ -1,0 +1,27 @@
+$primary: #25d366;
+$secondary: #075e54;
+$info: #34b7f1;
+
+$black: #010101;
+
+$body-bg: #f3f4f7;
+
+$border-radius-sm: 5px;
+$border-radius: 10px;
+$border-radius-lg: 15px;
+
+$box-shadow-sm: 0 .25rem 5px rgba($black, .125);
+$box-shadow: 0 .5rem 10px rgba($black, .25);
+$box-shadow-lg: 0 1rem 15px rgba($black, .5);
+
+$enable-gradients: true;
+$enable-shadows: true;
+
+$font-family-sans-serif: "Roboto", sans-serif;
+
+$input-focus-border-color: $secondary;
+$input-focus-box-shadow: none;
+
+$link-color: $info;
+
+@import "node_modules/bootstrap/scss/bootstrap";
