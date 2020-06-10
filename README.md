@@ -6,9 +6,9 @@
   What&apos;s new?
 </h1>
 
-Use this tiny web app to send WhatsApp message to any number you have without saving it.
+Use this tiny web app to send WhatsApp message to any number you have without saving it. Quickly built to solve a particular business use issue with WhatsApp but might benefit others as well.
 
-For quick access, add this to **your home screen**.
+For quick access, add this to **your home screen** or share [https://bit.ly/vpzwhatsnew](https://bit.ly/vpzwhatsnew) with your friends in need.
 
 ---
 
